@@ -1,91 +1,171 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+}
+.body {
+  background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
+}
+.gameContainer {
+  display: flex;
+  justify-content: center;
+  padding: 95px 0;
+  background-image: linear-gradient(to bottom, #30cfd0 0%, #330867 100%);
 }
 nav {
-    background-color: black;
-    color: white;
-    align-items: center;
-   font-size: 45px;
-    padding: 10px;
-    display: flex;
-    margin: none;
+  display: flex;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  justify-content: center;
+  font-size: 45px;
+  padding: 20px;
 }
 
 nav ul {
-    list-style-type: none;
+  list-style-type: none;
+  font-family: Consolas;
+}
+nav li:hover {
+  font-weight: 600;
 }
 
-.gameContainer {
-display: flex;
-justify-content: center;
-margin-top: 20px;
-}
 .container {
-display: grid;
-grid-template-columns: repeat(3,10vw);
-grid-template-rows: repeat(3,10vw);
-position: relative;
-
+  display: grid;
+  grid-template-columns: repeat(3, 10vw);
+  grid-template-rows: repeat(3, 10vw);
+  position: relative;
 }
 .container div {
-    border: 1px solid;
-    font-size: 5vw;
-    text-align: center;
-    justify-content: center;
-   
+  background-image: radial-gradient(
+    circle farthest-corner at 50.1% 52.3%,
+    rgba(255, 231, 98, 1) 58.2%,
+    rgba(251, 212, 0, 1) 90.1%
+  );
+  margin: 4px;
+  border-radius: 25px;
+  border: none;
+  font-size: 5vw;
+  text-align: center;
+  justify-content: center;
 }
 .box {
-    border: 2px solid black;
-    font-size: 8vw;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.box:hover{
-    background-color: rgb(218, 244, 241) ;
-    color: blue;
-    transition: 100ms;
-    cursor: pointer;
+.boxtext img {
+  width: 120px;
+  height: 120px;
+}
+
+.box:hover {
+  background-image: radial-gradient(
+    circle farthest-corner at 50.1% 52.3%,
+    rgb(255, 217, 0) 8.2%,
+    rgb(255, 229, 82) 99.1%
+  );
+  transition: 100ms;
+  cursor: pointer;
 }
 
 .Info {
-    font-size: 25px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #033600;
+  font-family: Harrington;
 }
 
+.gameControl {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
 .gameInfo {
-    padding:100px 80px;
-    
+  padding: 0 80px;
+}
+
+.gameInfo h1 {
+  font-size: 20px;
+  font-family: "Lucida Handwriting", cursive;
 }
 .imgbox img {
-    width: none;
+  display: 0;
+  transition: 1s ease-in-out;
+  width: 0;
+  border-radius: 40px;
 }
-.gameInfo h1 {
-    font-size: 60px;
-}
- .imgbox img {
-    display: 0;
-    transition: 1s ease-in-out;
-    width: 0;
- }
- #reset {
-    background-color: purple;
-    border-radius: 10px;
-    padding: 5px 20px;
-    font-size: 15px;
-    cursor: pointer;
-    margin:  20px;
- }
- @media screen and(max-width :1000px){
-    .gameContainer{
-        flex-wrap: wrap;
-    }
-    .gameInfo {
-        margin: 30px;
-    }
-    .gameInfo h1 {
-        font-size: 1.5rem;
-    }
+#reset {
+  font-family: "Segoe Script";
 
- }
+  background-color: rgb(208, 1, 1);
+  color: white;
+  border-radius: 40px;
+  border: none;
+  padding: 15px 40px;
+  font-size: 15px;
+  transition: 1s;
+
+  cursor: pointer;
+}
+#reset:hover {
+  background-color: red;
+  transition: 1s;
+  box-shadow: 0 0 5px 1px rgb(117, 0, 0);
+}
+
+@media screen and (max-width: 1460px) {
+  .boxtext img {
+    width: 60%;
+    width: 80px;
+    height: 80px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .boxtext img {
+    width: 50%;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .boxtext img {
+    width: 40%;
+    width: 30px;
+    height: 30px;
+  }
+
+  .gameContainer {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .gameInfo {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .gameInfo h1 {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    font-size: 30px;
+  }
+  .boxtext img {
+    width: 30%;
+    width: 24px;
+    height: 24px;
+  }
+  .gameInfo {
+    padding: 4px 20px;
+  }
+
+  #reset {
+    padding: 10px 20px;
+    font-size: 12px;
+  }
+}
